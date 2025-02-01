@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------
+                JENKINS
+to install jenkins first go to 
+1. this dock and fire all commands one by one  ==> https://pkg.jenkins.io/debian-stable/
+2. sudo systemctl start jenkins
+3. sudo systemctl enable jenkins 
+4. sudo systemctl status jenkins 
+5 now login to ec2 ip with port 8080 for eg http://13.61.176.145:8080 (if not working check security config for port 8080)
+6. now copu path which you got in jenkins and run sudo cat <that file path > eg sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+7. you will get a security key like this --> 890c54c1bf7447ee9dbd0cef3eb13c0e  paste it in jenkins and start setup jenkins 
+
+--------------------------------------------------------------------------------------------

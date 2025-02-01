@@ -1,0 +1,124 @@
+
+
+1.A Singly linked list is just a collection on nodes,
+  which also stores the reference of other node
+2.singly linked lists are an excellent alternative to arrays ,
+when insertion and deletion at the beginning are frequently required
+3.Arrays contain a built in index whereas Linked Lists do not
+4.The idea of a list data structure that consists of nodes is the 
+  foundation for other data structures like Stacks and Queues
+
+/*
+push strategy
+Adding a new node at the end of the linked list
+1.This function should accept a value . 
+2. create a new node using the value passed to the function
+3. if there is no head property on the list,set the head and tail to be the newly created node
+4.otherwise set the next property on the tail to be the new node and set the tail property
+  on the list to be the newly created node
+5.increment the length by one.
+6.return the linked list
+*/
+
+/*
+pop strategy
+Removing a node from the end of the linked list!
+1.if there are no nodes in the list return undefined
+2.loop through the list until you reach the tail
+3.set the next property of the 2nd to last node to be null
+4.set the tail to be 2nd to last node
+5.decrement the length of the list by 1
+6.return the value of the node removed
+*/
+
+/*
+shift strategy
+Removing a new node from the beginning of the linked list!
+1.if there are no nodes,return undefined,
+2.store the current head propertyin a variable
+3.set the head property to be the current head's next property
+4.decrement the length by 1
+5.return the value of the node removed
+*/
+
+/*
+unshift strategy
+Adding a new node to the beginning of the linked list!
+1.This function should accept a value
+2.create a new node using the value passed to the function
+3.if there is no head property on the list,set the head and the tail to be 
+  the newly created node
+4.otherwise set the newly created node's next property to
+  be the current head property on the list
+5.set the head property on the list to be that newly created node
+6.increment the length of the list by 1
+7.return the linked list
+*/
+
+/*
+get strategy
+Retreiving a node by it's position in the linked list
+1.function should accept an index
+2.if the index is less than zero or greater than or equal to length of the list,return null
+3.Loop through the list until you reach the index and 
+  return the node at that specific index 
+*/
+
+/*
+set strategy
+Changing the value of a node based on it's position in the linked list
+1.this function should accept an index and a value
+2.use your get function to find the specific node.
+3.if the node is not found, return false
+4. if the node is found,set the value of that node to be the value passed to 
+  the function and return true
+*/
+
+/*
+insert strategy
+Adding a node to the linked list at a specific position
+1.if the index is less than 0 or greater than the length, return false
+2.if the index is same as the length,push a new node to the end of the list
+3.if the index is 0,unshift a new node to the start of the list
+4.otherwise ,using get method ,access the node at the index -1
+5. set the next property on that node to be the new node
+6.set the next property on the new node to be the previous next 
+7.increment the length
+8.return true
+*/
+
+/*
+remove strategy
+Removing a node from the linked list at a specific position
+1.if the index is less than zero or greater than the length, return undefined
+2.if the index is same as the length -1, pop
+3.if the index is 0,shift
+4.otherwise, using the get method,access the node at the index -1
+5.set the next property on that node to be the next of the next node
+6.decrement the length
+7.return the value of the node removed 
+*/
+
+
+/*
+Reverse a Singly linked list in place 
+ 1. you can't make a copy
+ 2.you have to reverse the list in place
+ ========================================
+ 1.swap the head and tail
+ 2.create a variable called next
+ 3.create a variable called prev
+ 4.create a variable called node and initialize it to the head property
+ 5.loop through the list
+ 6.set next to be the next property on whatever node is
+ 7.set the next property on the node to be whatever prev is
+ 8.set prev to be the value of the node variable
+ 9.set the node variable to be the value of the next variable
+*/
+
+
+Big O
+  Insertion -O(1)
+  Removal -it depends... O(1) or O(N)
+  Searching -O(N)
+  Access -O(N)

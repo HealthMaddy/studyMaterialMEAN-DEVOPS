@@ -1,0 +1,10 @@
+binary search 
+1. it is much faster from search 
+2. rather than eliminating 1 element at a time,
+ you can eliminate half of the remaining elements at a time
+3. binary search only works on sorted arrays
+4. main idea is divide and conquer
+
+
+Big O
+worst and average case:O(log n)   Best case:O(1)

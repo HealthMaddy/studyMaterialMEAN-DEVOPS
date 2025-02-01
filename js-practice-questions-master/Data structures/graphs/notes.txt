@@ -1,0 +1,104 @@
+What are graphs?
+: A graph data structure consists of a finite( and possibly mutable)
+set of vertices or nodes or points,
+together with a set of unordered pairs of these vertices of an undirected graph
+or a set of ordered pairs for a directed graph.
+
+in simple words: nodes and connection between them  
+
+Uses for Graphs:
+1.Social Networks
+2.Location/Mapping
+3.Routing Algorithms
+4.Visual Hierarchy
+5.File system optimizations
+6.Recommendation Systems:
+    1."People also watched..."
+    2."You might also like"
+    3."People you might know"
+    4."Frequently bought with"
+
+Essential Graph Terms
+1.Vertex- a node
+2.Edge- connection between nodes
+3.Weighted/Unweighted- values assigned to distances between
+  vertices
+4.Directed/Undirected- directions assigned to distance between
+  vertices
+Types of Graphs
+1.weighted non-directed graphs 
+2.unweighted non-directed graphs
+3.unweighted directed graphs
+4.weighted directed graphs
+
+Differences and Big O -
+|V| -number of vertices
+|E| -number of edges
+
+------------------------------------------------------
+Operation   |   Adjacency List   |  Adjacency matrix
+------------------------------------------------------
+Add Vertex      O(1)                O(|V^2|)
+Add Edge        O(1)                O(1)
+Remove Vertex   O(|V|+|E|)          O(|V^2|)
+Remove Edge     O(|E|)              O(1)
+Query           O(|V|+|E|)          O(1)
+Storage         O(|V|+|E|)          O(|V^2|)
+------------------------------------------------------
+
+Adjacency List:
+                1.can take up less space(in sparse graphs)
+                2.faster to iterate over all edges
+                3.can be slower to lookup specific edge
+
+                       V/s
+
+Adjacency matrix:
+                1.takes more space(in sparse graph)
+                2.slower to iterate over all edges
+                3.faster to lookup specific edge
+
+Why we use Adjacency list more often?
+Most data in the real world tends to lend itself to sparser 
+and/or larger graphs
+
+
+Undirected-graph
+/*
+Adding a vertex 
+1.write a method called addVertex,which accepts a name of a vertex
+2.it should a key to the adjacency list with the name of the vertex
+  and set its value to be an empty array
+*/
+/*
+Adding An Edge 
+1.this function should accept two vertices,
+  we can call them vertex 1 and vertex two
+2.the function should find the adjacency list
+  the key of vertex one and push vertex 2 to the array
+3.the function should find the adjacency list the key of 
+  vertex2 and push vertex1 to the array 
+4.don't worry about handling errors/invalid vertices
+*/
+
+/*
+Removing An Edge
+1.this function should accept two vertices,we'll call them
+  vertex1 and vertex2
+2.the function should reassign the key of vertex1 to be an
+  array that does not contain vertex1
+3.the function should reassign the key of vertex2 to be an 
+  array that does not contain vertex1
+4.don't worry about handling errors/invalid vertices
+*/
+
+/*
+Removing a vertex
+1.the function should accept a vertex to remove
+2.the function should loop as long as there are any
+  other vertices in the adjacency list for that vertex
+3.inside of the loop,call our removeEdge function with
+  the vertex we are removing and any values in the 
+  adjacency list for that vertex
+4.delete the key in the adjacency list for that vertex
+*/

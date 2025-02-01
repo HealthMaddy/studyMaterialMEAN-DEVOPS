@@ -1,0 +1,79 @@
+Counting Numbers:(Time complexity)
+1.Depending on what we count , the numberof operations can be as low as
+  2n or as high as 5n+2
+2.But regardless of the exact number , the number of operations grows
+  roughly proportionally with 
+3.if n doubles,the number of operations will also roughly doubles 
+
+
+What is big O?
+1.big O is a way of formalize fuzzy counting
+2.it allows us to talk formally about how the runtime
+  of an algorithm grows as the input grows
+3.we won't care about the details, only the trends
+
+Definition:
+we say that an algorithm is O(f(n)) if the number of simple operations  
+the computer has to do is eventually less than a constant times f(n),
+as n increases
+
+1.f(n) could be linear (f(n)=n)
+2.f(n) could be quadratic (f(n)=n^2)
+3.f(n) could be constant (f(n)=1)
+4.f(n) could be something entirely different!
+
+[note:here f(n) means a function and n is the output]
+
+Simplifying Big O expressions:
+1.when determining the time complexity of an algorithm,there are some
+  helpful rules of thumb for big O expressions.
+2.these rules of thumb are consequences of the definition of big O 
+  notation.
+
+  Constants Don't matter
+  O(2n)❌	             O(n)
+  O(500)❌	             O(1)
+  O(13n^2)❌	           O(n^2)
+
+  Smaller terms Don't matter
+  O(n+10)❌	           O(n)
+  O(1000n+50)❌	       O(n)
+  O(n^2+5n+8)❌	       O(n^2)
+
+  Big O shorthands:
+  1.Arithmetic operations are constants 
+  2.Variable assignments is constant
+  3.Accessing elements in an array(by index) or object (by key) is
+    constant
+  4.In a loop,the complexity is the length of the loop times the 
+    complexity of whatever happens inside the loop
+
+Space complexity
+How to calculate space complexity? What about the inputs?
+1.Sometimes you'll hear the tearm auxiliary space complexity
+  to refer to space required by the algorithm,not including space 
+  taken up by the inputs.
+2.unless otherwise noted,when we talk about space compleity,
+  technically we'll be talking about auxiliary space complexity
+
+Space complexity in js
+    Rules of thumb
+1.Most primitive(booleans,numbers,undefined,null) are constant space
+2.Strings require O(n) space (where n is the string length) 
+3.Reference types are generally O(n), where n is the length(of arrays)
+  or the number of keys(of objects)
+
+Logarithm:
+
+log2(8) = 3   --> 2^3 = 8
+log2(value) = exponent    -->2^exponent = value
+
+[note:here 2 is base 2]
+1.the logarithm of a number roughly measures the number of times
+  you can divide that number by 2 before you get a value that's 
+  less than or equal to one
+
+Uses of logarithms:
+1.certain searching algorithms have logarithmic time complexity
+2.efficient sorting algorithms involve logarithms
+3.recursions sometimes involve logarithmic space complexity

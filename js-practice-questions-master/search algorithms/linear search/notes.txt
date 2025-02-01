@@ -1,0 +1,4 @@
+linear search 
+1.linear search checks for the element at every index one by obe in a linear fashion
+2.big o
+best case : O(1)  average case: O(n)       worst case: O(n)

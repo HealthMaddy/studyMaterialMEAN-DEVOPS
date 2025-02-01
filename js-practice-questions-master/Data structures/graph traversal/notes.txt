@@ -1,0 +1,62 @@
+Uses of graph traversal
+1.peer to peer networking
+2.web crawlers
+3.finding "closest" matches/recommendations
+4.shortest path problems
+    1.gps navigation
+    2.solving mazes
+    3.AI(shortest path to win the game)
+
+Depth first search:
+ explore as far as  possible down one branch before "backtracking"
+
+/*
+Deapth first traversal(recursive)
+1.the function should accept a starting node
+2.create a list to store the end result,to be returned at the very end
+3.create an object to store visited vertices
+4.create a helper function which accepts a vertex
+    1.the helper function should return early if the vertex is empty
+    2.the helper function should place the vertex it accepts into the 
+      visited object and push that vertex into the result array
+    3.loop over all of the values in the adjacencyList for that vertex 
+    4.if any of those values have not been visited,recursively invoke the
+      helper function with that vertex
+    5.invoke the helper function with the starting vertex
+    6.return the result array
+*/ 
+
+/*
+Deapth first traversal(iterative)
+1.the function should accept a starting node
+2.create a stack to help use keep track of vertices (use a list/array)
+3.create a list to store the end result,to be returned at the very end
+4.create an object to store visited vertices
+5.add the starting vertex to the stack, and mark it visited
+6.while the stack has something in it:
+    1.pop the next vertex from the stack
+    2.if that vertex hasn't been visited yet:
+        1.mark it as visited
+        2.add it to the result list
+        3.push all of its neighbours into the stack
+7.return the result array
+*/
+
+Breadth First seatch:
+ visit neighbours at current depth first!
+
+/*
+Breadth first traversal
+1.the function should accept a starting vertex
+2.create a queue(you can use an array) and place the starting vertex in it
+3.create an array to store the nodes visited
+4.create an object to store nodes visited
+5.mark the starting vertex as visited
+6.loop as long as there is anything in the queue
+7.remove the first vertex from the queue and push it into the array that 
+  stores nodes visited
+8.loop over each vertex in the adjacency list for the vertex you are visiting
+9.if it is not inside the object that stores nodes visited, mark it as 
+  visited and enqueue the vertex
+10.once you have finished looping,return the array of visited nodes
+*/

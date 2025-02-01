@@ -1,0 +1,115 @@
+1.Doubly linked lists are almost identical to Singly linked list,
+ except every node has another pointer,to the previous node!
+2.Better than singly linked lists for finding nodes and can be done in half the time!
+3.However,they do take up more memory considering the extra pointer
+
+/*
+Push strategy
+Adding a node to the end of the doubly linked list
+1.create a new node with the value passed to the function
+2.if the head property is null set the head and tail to be the newly created node
+3.if not, set the next property on the tail to be that node
+4.set the previous property on the newly created node to be the tail
+5.set the tail to be the newly created node
+6.increment the length
+7.return the doubly linked list 
+*/
+
+/*
+Pop strategy
+Removing a node from the end of the doubly linked list
+1.if there is no head,return undefined
+2.store the current tail in a variable to return later
+3.if the length is 1,set the head and the tail to be null
+4.update the tail to be the previous node.
+5.set the newTail's next to null
+6.decrement the length
+7.return the value removed
+*/
+
+/*
+Shift strategy
+Removing a node from the beginning of the doubly linked list
+1.if the length is 0,return undefined
+2.store the current head property in a variable(we'll call it old head)
+3.if the length is one
+    1.set the head to be null
+    2.set the tail to be null
+4.update the head to be the next of the old head
+5.set the head's prev property to null
+6.set the old head's next to null
+7.decrement the length
+8.return the old head
+*/
+
+/*
+Unshift strategy
+Ading a node to the beginning of the doubly linked list
+1.create a new node with the value passed to the function
+2.if the length is 0
+    1.set the head to be the new node
+    2.set the tail to be the new node
+3.otherwise 
+    1.set the prev property on the head of the list to be the new node
+    2.set the next property on the new node to be the head property
+    3.update the head to be the new node
+4.inrement the length
+5.return the list
+*/
+
+/*
+Get strategy
+Accessing a node in a doubly linked list by its position
+1.if the index is less than 0 or greater or equal ot the length,return null
+2.if the length is less than or equal to the half of the length of the list
+  1.loop through the list starting from the head and loop towards the middle 
+  2.return the node once it is found
+3.if the index is greater than the half of the length of the list
+  1.loop through the list starting from the tail and loop towards the middle 
+  2.return the node once it is found
+
+*/
+
+/*
+Set strategy
+Replacing the value of a node to the fiven index in a doubly linked list
+1.create a variable which is the result of the get method at the index passed to the function
+  1.if the get method returns a valid node,set the value of that node to be the value passed
+    to the function
+  2.return true
+2.otherwise, return false
+*/
+
+/*
+Insert strategy
+Adding a node in a doubly linked list by a certain position
+1.if the index is less than zero  or greater tha or equal to the length return false
+2.if the index is 0,unshift
+3.if the index is same as the length,push
+4.use the get method to access the index-1
+5.set the next and prev properties on the correct nodes to link everything together
+6.increment the length 
+7.return true
+*/
+
+/*
+Remove strategy
+Removing a node in a doubly linked list by a certain position
+1.if the index is less than zero or greater than or equal to the length return undefined
+2.if the index is 0,shift
+3.if the index is length-1 ,pop
+4.use the get method to retrieve the item to be removed
+5.update the next and the prev properties to remove the found node from the list
+6.set next and prev to null on the found node
+7.decrement the length
+8.return the removed node 
+*/
+
+
+Big O
+  Insertion -O(1)
+  Removal -O(1)
+  Searching -O(N)
+  Access -O(N)
+
+technically searching is O(N/2), but that's still O(N)

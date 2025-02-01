@@ -1,0 +1,48 @@
+What Dijksrta's algorithm does?
+1.finds the shortest paths between vertices on a graph
+2.what's the fastest way to get from point A to point B
+
+Why is is useful?
+1.GPS -finding fastest route
+2.Network routing- finds open shortest path for data
+3.Biology- used to model the spread of virus among humans
+4.Airline tickets-finding cheapest route to your designation
+5.Many other uses!
+
+[note: we will be using a Weighted graph and a Priority queue for this algorithm]
+
+Approach for finding shortest path
+1.Every time we look to visit a new node,we pick the node with the smallest
+  known distance to visit first
+2.once we've moved to the node we're going to visit,we look at each of it's 
+  neighbours
+3.for each neighboring node,we calculate the distance by summing the total 
+  edges that lead to the node we're checking from the starting node
+4.if the new total distance to a node is less than the previous total,
+  we store the new shorter distance for that one
+
+/*
+Djikstra's strategy
+1.this function should accept a starting and ending vertex
+2.create an object (we'll call it distances) and set each key to be every vertex
+  in the adjacency list with a value of infinity,except for the starting vertex
+  which should have a value of 0
+3.after setting a value in the distances object,add each vertex with a priority of
+  infinity to the priority queue,except the starting vertex,which should have a 
+  priority of 0 because that's where we begin
+4.create another object called previous and set each key to be every vertex in
+  the adjacency list with a value of null
+5.start looping as long as there is anything in the priority queue
+    1.dequeue a vertex from the priority queue
+    2.if that vertex is same as the ending vertex- we are done!
+    3.otherwise loop through each value in the adjacency list at that vertex
+        1.calculate the distance to that vertex from the starting vertex
+        2.if the distance is less than what is currently stored in our distances
+          object
+            1.update the distance object with the new lower distance
+            2.update the previous object to contain that vertex
+            3.enqueue the vertex with the total distance from the start node
+*/
+
+[note: implementation of Djikstra's algorithm with binary heap is way faster 
+       than naive approach(i.e using built in array)]

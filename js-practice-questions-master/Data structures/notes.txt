@@ -1,0 +1,41 @@
+what are data structures?
+-Data structures are collections of values, the relationship among them,
+ and the functions or operations that can be applied to the data
+
+what is a linked list?
+- a data structure that contain a head,tail and length property.
+-linked lists consists of nodes,and each node has a value and 
+ a pointer to another node or null
+
+ Difference between Linked lists and Arrays?
+ Lists:
+    -do not have indexes
+    -connected via nodes with a next pointer
+    -random access is not allowed
+ Arrays:
+    -indexed in order
+    -insertion and deletion can be expensive
+    -can quickly be accessed at a specific index
+
+What is a tree?
+A data structure that consists of nodes in a parent/child relationship
+
+1.Lists- are linear     2.Trees- are non-linear
+
+In tree every node points only to its children
+
+Tree terminology
+1.Root- The top node in a tree
+2.Child- A node directly connected to another node when moving away from the root.
+3.Parent- The converse notion of a child
+4.Siblings- A group of nodes with the same parent
+5.Leaf- A node with no children
+6.Edge- The connection between one node and another
+
+Tree Usage
+1.Html Dom
+2.Network Routing
+3.Abstract Syntax Tree
+4.Artificial Intelligence
+5.Folders In Operating System
+6.Computer File Systems

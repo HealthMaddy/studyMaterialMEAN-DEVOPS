@@ -1,0 +1,28 @@
+1.Like merge sort ,exploits the fact that arrays of 0 and 1 element are always sorted
+2.works by selecting one element(called the "pivot") and finding the index where the pivot
+should end up in the sorted array
+3.Once the pivot is positioned appropriately, quick sort can be on either side of pivot
+
+PIOVT HELPER
+
+1.In order to imlement merge sort,it's useful to first implement a function
+ responsile arrranging elements in an array on eiter side of a pivot
+ 2.give an array, this helper function should designate an element as the pivot
+ 3.it should rearrange then elements in the array, and all values greater than the pivot
+ are moved to the right of the pivot
+ 4.the order of elements on either side of the pivot doesn't matter!
+ 5.the helper should do this in place,that is ,it should not create a new array
+ 6.when complete, the helper should return the index of the pivot
+
+
+ PICKING A PIVOT
+ 1.the runtime of quick sort depends in part on how one selects the pivot
+ 2.ideally, the pivot should be chosen set you're sorting
+ 3.for simplicity, we'll always choose the pivot to be the first element
+
+ Big O
+time complexity
+
+best case:O(n log n)  Average Case:O(n log n) Worst Case:O(n^2)
+
+space complexity :O(log n)

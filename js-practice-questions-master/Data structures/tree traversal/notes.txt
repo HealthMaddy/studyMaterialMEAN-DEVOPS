@@ -1,0 +1,90 @@
+Traversing a tree ia an approach to visit every single once without
+worrying about the order of the tree ,to find the one we are looking for
+
+there are two ways:
+1.Breadth-first search
+2.Depth-first Search -we check for the node vertically in depth (i.e child node first)
+
+Breadth First Search
+1.in this we look for every sibling node before visiting a child node
+  to find our node (we work horizontally)
+
+/*
+BFS
+steps -iteratively
+1.create a queue(this can be an array) and a variable to
+  store the values of nodes visited
+2.place the root node in the queue
+3.loop as long as there is anything in the queue
+    1.dequeue a node from the queue and push the value of 
+      the node into the variable that stores the nodes
+    2.if there is a left property on the node dequeued -
+      add it to the queue
+    3.if there is a right property on the node dequeued -
+      add it to the queue
+4.return the variable that stores the values
+*/
+ 
+Deapth First Search
+1.in this we look for every child  node down to the end of the tree,
+  before visiting a sibling node to find our node (we work vertically downwards)
+2.there are basically three orders in DFS
+    1.PreOrder
+    2.PostOrder
+    3.InOrder
+
+DFS- PreOrder -in this we visit the node first then we traverse its entire left side first
+               then we traverse the entire right side
+
+/*
+DFS -PreOrder
+steps -Recursively
+1.Create a variable to store the values of nodes visited
+2.Store the root of the BST in a variable called current
+3.write a helper function which accepts a node
+    1.push the value of the node to the variable that stores the values
+    2.if the node has left property,call the helper function with the left property
+      on the node
+    3.if the node has a right property,call the helper function
+      with the right property on the node
+4.invoke the helper function with the current variable
+5.Return the array of values
+*/
+
+/*
+DFS -PostOrder
+steps -Recursively
+1.Create a variable to store the values of nodes visited
+2.Store the root of the BST in a variable called current
+3.write a helper function which accepts a node
+    1.if the node has a left property call the helper function
+      with the left property on the node
+    2.if the node has a right property,call the helper function
+      with the right property on the node
+    3.push the value of the node to the variable that stores
+      the values
+    4.invoke the helper function with the current variable
+*/
+
+/*
+DFS -InOrder
+steps -Recursively
+1.Create a variable to store the values of nodes visited
+2.Store the root of the BST in a variable called current
+3.write a helper function which accepts a node
+    1.if the node has a left property call the helper function
+      with the left property on the node
+    2.push the value of the node to the variable that stores
+      the values
+    3.if the node has a right property,call the helper function
+      with the right property on the node
+    4.invoke the helper function with the current variable
+    5.return the array of values
+*/
+
+used cases of Dfs all orders:
+1.InOrder: used commonly with BST's (Notice we get all nodes in the tree 
+ in their underlying order)
+
+2.PreOrder:can be user to "export" a tree structure so that it is easily
+           reconstructed or copied

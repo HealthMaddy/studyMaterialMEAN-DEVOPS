@@ -1,0 +1,17 @@
+1.sorting is the process of rearranging the items in a collection(1.e. an array),
+so that the items are in kind of order.
+[eg:
+    1.sorting numbers from smallest to largest,
+    2.sorting names alphabetically
+    3.sorting movies based on release year etc...]
+
+::Bubble sorting
+    - a sorting algorithm where the largest value bubble at the top!
+
+
+Big O
+time complexity
+
+best case:O(n)  Average Case:O(n^2) Worst Case:O(n^2)
+
+space complexity :O(1)

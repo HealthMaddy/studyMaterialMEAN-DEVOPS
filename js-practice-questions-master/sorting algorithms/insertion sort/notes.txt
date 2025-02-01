@@ -1,0 +1,10 @@
+Insertion sort 
+1.it builds up the sort by gradually creating a larger left half which is always sorted
+
+
+Big O
+time complexity
+
+best case:O(n)  Average Case:O(n^2) Worst Case:O(n^2)
+
+space complexity :O(1)

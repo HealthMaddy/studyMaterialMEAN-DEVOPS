@@ -1,0 +1,39 @@
+What is Dynamic programming?
+:A method for solving a complex problem by breaking it down into
+a collection of simpler subproblems,solving each of those subproblems
+just once, and storing their solutions
+
+Where does it work on?
+:It only works on the problems with
+1.optimal substructure
+2.overlapping subproblems
+
+Overlapping subproblems:
+a problem is said to have overlapping subproblems if it can be broken down into
+subproblems which are reused several times
+ e.g:-
+    fibonacci sequence :- "every number after the first two is the sum of 
+                            the two preceding ones"
+                            [1 ,1 ,2 ,3 ,5 ,8 ,13 ....]
+
+Optimal substructure:
+a problem is said to have optimal substructure if an optimal solution
+can be constructed from optimal solutions of its subproblems
+
+Big O( simple recursive fibonacci series)  :O(2^n)  
+
+========================================================
+Memoization (Top-down approach):
+1.Storing the result of expensive function calls and returning the 
+ cached result when the same inputs occur again
+2.space complexity is worse that tabulation 
+3.it can throw stack overflow for large numbers
+
+Big O :O(n)
+
+Tabulation (Bottom-up approach):
+1.storing the result of previous result in a "table" (usually in array)
+2.usually done using iteration
+3.better space complexity can be achieved using tabulation than Memoization
+4.it can throw  infinity for large numbers
+Big O :O(n)

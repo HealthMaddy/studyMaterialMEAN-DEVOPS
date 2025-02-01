@@ -1,0 +1,15 @@
+1.Radix sort is a special sorting algorithm that works on lists and numbers
+2.it never makes comparisons between elements
+3.it exploits the fact that information about the size of a number is encoded in the number of digits
+4.more digits means a bigger number
+5.mostly it works with base 10 numbers
+
+Big O
+time complexity
+
+best case:O(nk)  Average Case:O(nk) Worst Case:O(nk)
+
+space complexity :O(n+k)
+
+        :n -length of array
+        :k -number of digits(average)

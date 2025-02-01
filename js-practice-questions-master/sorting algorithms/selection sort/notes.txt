@@ -1,0 +1,13 @@
+Selection Sort
+1.it is similar to bubble sort ,
+but instead of first placing large values into sored positions,
+it places small values into sorted position
+
+
+
+Big O
+time complexity
+
+best case:O(n^2)  Average Case:O(n^2) Worst Case:O(n^2)
+
+space complexity :O(1)

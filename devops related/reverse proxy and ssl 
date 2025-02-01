@@ -1,0 +1,37 @@
+
+steps to setup reverse proxy 
+
+1. first install apache2  sudo apt-get install apache2
+2. go to sudo nano /etc/apache2/apache2.conf
+3. paste code : 
+<VirtualHost *:80>
+
+    ServerName user-api.healthmaddy.com
+
+    ProxyRequests Off
+
+
+    ProxyPass / http://16.170.239.87:3000/
+
+    ProxyPassReverse / http://16.170.239.87:3000/
+
+</VirtualHost>
+
+4. then fire these commands 
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo systemctl restart apache2
+
+
+now you can setup ssl 
+steps to install ssl certificate ---------------------------
+
+sudo apt-get update
+sudo apt-get install certbot python3-certbot-apache 
+you can test if the Certbot client was installed correctly using the following command.
+sudo certbot --help
+sudo certbot --apache
+Verifying Certbot Auto-Renewal:
+sudo systemctl status certbot.timer  // here you will see some output
+To test the renewal process, you can do a dry run with certbot:
+sudo certbot renew --dry-run //here you will see some output last line you should see at the end of sentence  (success)

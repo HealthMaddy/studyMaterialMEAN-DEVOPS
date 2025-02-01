@@ -1,0 +1,40 @@
+1. use all packages like morgan , hpp ,helmet, cors etc  (done)
+2. work on child process implementation (done)
+3. work on worker thread implementation (done)
+4.work on streams and file read and write (done)
+5.work on promises (done)
+6. work on bcrypt and crypto and passport.js and jwt (done)
+7. work on socket js (done)
+8. work on mongoose (done)
+9. work with middlewares - (optional)
+
+work done so far 
+1. basic route implementation
+2.basic and global error handling
+3. basic project structure setup 
+
+
+
+
+
+todays plan 
+
+12 -1 nodejs tech remaining points  (done)
+
+1-1:10  -  lunch  (done)
+ --lagging by 15 mins
+1:10 - 2:30  - nodejs and js pdf (done)
+
+2:30  -  4:30 angular
+30 mins break 
+5-6 mongodb  -b2a  theory + coding
+6-7 mysql    -b2a  theory + coding
+7-8 travel 
+8-10 all advanced topics and fast look at nestjs 
+
+10-2 am sleep 
+
+2 am -8 am coding questions js
+
+
+

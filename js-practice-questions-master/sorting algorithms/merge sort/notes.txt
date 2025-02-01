@@ -1,0 +1,14 @@
+1.It's a combination of two things -merging and sorting!
+2.Exploits the fact that arrays of 0 or 1 element are always sorted
+3.works by decomposing an array of 0 or 1 elements,then building up a newly sorted array
+
+Big O
+time complexity
+
+best case:O(n log n)  Average Case:O(n log n) Worst Case:O(n log n)
+[
+    note: O(log n) came from decomposing the larger array in smaller ones,and the O(n)
+came from the comparing and composing the smaller pieces of array
+]
+
+space complexity :O(n)

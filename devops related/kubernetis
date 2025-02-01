@@ -1,0 +1,40 @@
+
+                KUBERNETIS
+create 3 instances 1 master 2 slave 
+
+below is some information about configurations 
+
+Master Node:
+CPU: 2 or more cores  
+RAM: 2 GB or more  
+Disk Space: 20 GB or more  
+Network: 1 Gbps  
+
+Worker Nodes:
+CPU: 2 or more cores  
+RAM: 2 GB or more (4 GB recommended)  
+Disk Space: 20 GB or more  
+Network: 1 Gbps  
+
+Firewall Ports/Inbound Traffic Ports for Kubernetes Cluster  
+
+Control-plane node(s)  
+
+Protocol | Direction | Port Range  | Purpose | Used By  
+---------|----------|-------------|-------------------------------|---------------------------  
+TCP | Inbound | 6443* | Kubernetes API server | All  
+TCP | Inbound | 2379-2380 | etcd server client API | kube-apiserver, etcd  
+TCP | Inbound | 10250 | Kubelet API | Self, Control plane  
+TCP | Inbound | 10251 | kube-scheduler | Self  
+TCP | Inbound | 10252 | kube-controller-manager | Self  
+
+Worker node(s)  
+
+Protocol | Direction | Port Range | Purpose | Used By  
+---------|----------|-------------------|--------------------|--------------------  
+TCP | Inbound | 10250 | Kubelet API | Self, Control plane  
+TCP | Inbound | 30000-32767 | NodePort Services† | All  
+
+github reference : https://github.com/lokeshjyo01/kubernetes-v1.30.2-cluster-using-kubeadm/blob/main/README.md
+
+

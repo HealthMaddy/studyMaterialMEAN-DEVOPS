@@ -1,0 +1,58 @@
+What is a hash table?
+1.Hash Tables are used to store key-value paires.
+2.they are like arrays but the keys are not ordered,
+3.unlike arrays , hash tables are fast for all the following operations:
+    finding values,adding new values,and removing values!
+
+What makes a good hash?
+1.Fast(i.e constant time),
+2.Doesn't cluster outputs at specific indices, but distributes uniformly,
+3.Deterministic(same input yields same output)
+4.They can find value quickly given a key
+5.they can add new key value quickly
+6.they store data in a large array,and work by hashing the keys
+
+Dealing with Collisions
+1.even with large array and a great hash function,Collisions are inevitable.
+2.there are many strategies for Dealing with collisions,but we'll focus on two:
+    1.seperate chaining
+    2.linear probing
+
+Seperate chaining
+    with seperate chaining at each index in our array we store values 
+    using a more sophisticated data structure(e.g an array or a linked list)
+
+Linear probing
+    with linear probing ,when we find a collision ,we search through the array
+     to find the next empty slot.
+    unlike the seperate chaining,this allows us to store a single key-value at 
+    each index.
+
+/*
+set strategy
+1.Accept a key and a value
+2.Hash the key
+3.Store the key value pair in the hash table array via 
+    seperate chaining
+
+get strategy
+1.accept the key
+2.hash the key
+3.retrieves the key-value pair in the hash table
+4.if the key isn't found ,returns undefined
+*/
+
+/*
+keys strategy
+1.loop through the hash table array and returns an array of keys in the table 
+
+values strategy
+1.loop through the hash table array and returns an array of values in the table
+
+*/
+
+Big O
+(average cases)
+        Insert:O(1)
+        Deletion:O(1)
+        Access:O(1)

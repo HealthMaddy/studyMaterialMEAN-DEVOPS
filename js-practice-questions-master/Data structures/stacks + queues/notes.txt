@@ -1,0 +1,80 @@
+What is a stack?
+A LIFO data structure,
+the last element added to the stack will be the first element removed from the stack
+
+Where stacks are used?
+1.Managing function invocations
+2.Undo/Redo
+3.Routing(the history object) is treated like a stack!
+
+
+/*
+Push strategy
+1.the function should accept a value
+2.create a new node with that value
+3.if there are no nodes in the stack,set the first and last property
+to be the newly created node
+4.if there is atleast one node,create a variable that stores the current 
+  first property on the stack
+5.reset the first property to be the newly created node
+6.set the next property on the node to be the previously created variable
+7.increment the size of the stack by 1
+
+*/
+
+/*
+Pop strategy
+1.if there are no nodes in the stack,return null
+2.create a temporary variable to store the first property on the stack
+3.if there is only one node, set the first and last property to be null
+4.if there is more than one node ,set the first property to be the next 
+  property on the current first
+5.decrement the size by 1
+6.return the value of the node removed 
+*/
+
+Big O
+  Insertion -O(1)
+  Removal -O(1)
+  Searching -O(N)
+  Access -O(N)
+---------------------------------------------------------------------------------------
+What is a Queue?
+A FIFO data structure,
+the first element added to the queue will be the first element removed from the queue
+
+Where Queues are used?
+1.background tasks
+2.uploading resources
+3.Printing/Task processing
+
+/*
+Enque strategy
+1.this function accepts a value
+2.create a new node using that value passed to the function
+3.if there are no nodes in the que ,set this node to be the 
+  first and last property of the queue
+4.otherwise, set the next property on the current last to 
+  be that node,and then set the last property of the queue
+  to be that node
+5.increment the size of the queue by 1
+*/
+
+/*
+Dequeue strategy
+1.if there is no first property,just return null
+2.store the first property on a variable
+3.see if the first is the same as the last(check if there is
+    only 1 node).if so,set the first and the last to be null
+4.if there is more than one node ,set the first property to 
+  be the next property of first
+5.decrement the size by 1
+6.return the value of the node dequeued 
+*/
+
+
+Big O
+  Insertion -O(1)
+  Removal -O(1)
+  Searching -O(N)
+  Access -O(N)
