@@ -933,7 +933,7 @@ function balanceBrackets(str) {
 // log(balanceBrackets("([])(){}(())()()"));
 
 //Question (med)
-
+// from here
 /*
 Binary Tree Diameter
 Write a function that takes in a Binary Tree
