@@ -39,3 +39,27 @@ function balancedBrackets(string) {
 
   return stack.length === 0;
 }
+
+
+// SOLUTION 2
+function balanceBrackets(str) {
+  let brackets = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+
+  let stack = [];
+
+  for (let el of str) {
+    if (Object.values(brackets).includes(el)) {
+      stack.push(el);
+    } else if (brackets.hasOwnProperty(el)) {
+      if (!stack.length || brackets[el] != stack.pop()) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length == 0;
+}

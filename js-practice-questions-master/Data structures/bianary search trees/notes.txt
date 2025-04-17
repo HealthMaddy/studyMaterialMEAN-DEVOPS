@@ -14,7 +14,7 @@ steps -iteratively or recursively
     2.if there is a root,check if the value of the new node is greater than or 
       less than the value of the root
     3.if it is greater
-        1.ceck to see if there is a node to the right 
+        1.check to see if there is a node to the right 
             1.if there is,move to that node and repeat these steps
             2.if there is not,add that node as the right property
     4.if it is less

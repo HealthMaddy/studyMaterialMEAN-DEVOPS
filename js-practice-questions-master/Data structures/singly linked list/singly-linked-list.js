@@ -115,6 +115,25 @@ class SinglyLinkedList {
     return removed;
   }
 
+
+  // reverse easy implementation
+  reverse() {
+    let prev = null;
+    let current = this.head;
+
+    while (current) {
+      const nextNode = current.next; // Store the next node
+      current.next = prev; // Reverse the pointer
+      prev = current; // Move prev forward
+      current = nextNode; // Move current forward
+    }
+
+    this.head = prev; // Update the head to the new start
+  }
+
+/*
+implementation with for loop
+
   reverse() {
     var node = this.head;
     this.head = this.tail;
@@ -130,7 +149,7 @@ class SinglyLinkedList {
     }
     return this;
   }
-
+*/
   // not related to linked list concept  just to see the order of all the elements in
   // the list in an efficient way
   print() {

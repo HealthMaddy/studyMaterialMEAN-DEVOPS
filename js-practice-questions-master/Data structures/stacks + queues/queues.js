@@ -36,5 +36,9 @@ class Queue {
     this.size--;
     return temp.value;
   }
+
+  peek(){
+    return this.first.value // basically to fetch the first node details
+}
 }
 var q = new Queue()

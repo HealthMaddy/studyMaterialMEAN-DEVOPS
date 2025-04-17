@@ -1,0 +1,212 @@
+ques list --
+
+1. balanced brackets (done )
+2. reverse linked list (done)
+3. longest string with  non repeated characters (done)
+3. reverse a string (easy) (done)
+4. check if string is pallindrome (done)
+
+5.find most frequent character in string
+6.check if one string is substring of other 
+7. longest common prefix of a string 
+8. merge 2 sorted linked lists
+9. tree traversal pre /in/post order 
+10. bubble sort , binary search (done)
+11. function to calculate factorial 
+12. function to calculate nth fibonacci series
+13. tapping rain water 
+
+
+
+solutions 
+
+1.
+
+ function balancedBrackets(str) {
+  const openingBrackets = "({[";
+  const closingBrackets = ")}]";
+  const map = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+
+  const stack = [];
+
+  for (let char of str) {
+    if (openingBrackets.includes(char)) {
+      stack.push(char);
+    } else if (closingBrackets.includes(char)) {
+      if (stack.length == 0) return false;
+
+      if (stack[stack.length - 1] == map[char]) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+  return stack.length == 0;
+}
+
+balancedBrackets("([])(){}(())()()");
+
+2. 
+/*
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+  // Reverse the linked list
+  reverse() {
+    let prev = null;
+    let current = this.head;
+
+    while (current) {
+      const nextNode = current.next; // Store the next node
+      current.next = prev; // Reverse the pointer
+      prev = current; // Move prev forward
+      current = nextNode; // Move current forward
+    }
+
+    this.head = prev; // Update the head to the new start
+  }
+
+
+
+*/
+
+
+3. 
+/*
+
+function lengthOfLongestSubstring(s) {
+    let set = new Set();
+    let left = 0, maxLength = 0;
+    for (let right = 0; right < s.length; right++) {
+        while (set.has(s[right])) {
+            set.delete(s[left]);
+            left++;
+        }
+        set.add(s[right]);
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+    return maxLength;
+}
+*/
+
+5.
+function mostFrequentChar(str) {
+    let charCount = {};
+    let maxChar = '';
+    let maxCount = 0;
+
+    for (let char of str) {
+        charCount[char] = (charCount[char] || 0) + 1;
+        
+        if (charCount[char] > maxCount) {
+            maxCount = charCount[char];
+            maxChar = char;
+        }
+    }
+
+    return { character: maxChar, frequency: maxCount };
+}
+
+console.log(mostFrequentChar("javascript")); // Output: { character: 'a', frequency: 2 }
+
+
+7. longest common prefix 
+
+function longestCommonPrefix(strs) {
+    if (!strs.length) return "";
+
+    let prefix = strs[0]; // Start with the first string as the prefix
+
+    for (let i = 1; i < strs.length; i++) {
+        while (strs[i].indexOf(prefix) !== 0) {
+            prefix = prefix.substring(0, prefix.length - 1); // Reduce prefix length
+            if (!prefix) return "";
+        }
+    }
+    
+    return prefix;
+}
+
+// Example Usage
+console.log(longestCommonPrefix(["flower", "flow", "flight"])); // Output: "fl"
+console.log(longestCommonPrefix(["dog", "racecar", "car"]));    // Output: ""
+
+
+
+
+9.
+/*
+
+function traverseBstInOrder(tree, arr) {
+  if (tree != null) {
+    traverseBstInOrder(tree.left, arr);
+    arr.push(tree.value);
+    traverseBstInOrder(tree.right, arr);
+  }
+  return arr;
+}
+
+function traverseBstPreOrder(tree, arr) {
+  if (tree != null) {
+    arr.push(tree.value);
+    traverseBstPreOrder(tree.left, arr);
+    traverseBstPreOrder(tree.right, arr);
+  }
+  return arr;
+}
+
+function traverseBstPostOrder(tree, arr) {
+  if (tree != null) {
+    traverseBstPostOrder(tree.left, arr);
+    traverseBstPostOrder(tree.right, arr);
+    arr.push(tree.value);
+  }
+  return arr;
+}
+
+
+
+*/
+
+
+11. factorial 
+
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // Output: 120
+
+
+12. nth factorial 
+
+function factorial(n){
+    if(n==0 || n== 1) return 1;
+    
+    return n * factorial(n-1) 
+}
+
+console.log(factorial(5))
+
+
+function fib(num){
+    let seq = [0,1]
+    
+    for(let i=2; i< num; i++){
+        seq.push(seq[i-1] + seq[i-2])
+    }
+    
+    return seq
+}
+
+console.log(fib(6))

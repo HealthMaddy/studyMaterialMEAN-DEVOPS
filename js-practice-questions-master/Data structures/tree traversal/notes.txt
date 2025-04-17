@@ -1,4 +1,4 @@
-Traversing a tree ia an approach to visit every single once without
+Traversing a tree is an approach to visit every single once without
 worrying about the order of the tree ,to find the one we are looking for
 
 there are two ways:

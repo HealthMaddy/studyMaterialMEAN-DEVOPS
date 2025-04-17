@@ -23,7 +23,8 @@ class Graph {
     }
     delete this.adjacencyList[vertex];
   }
-  deapthFirstRecursive(start) {
+  
+  depthFirstRecursive(start) {
     const result = [];
     const visited = {};
     const adjacencyList = this.adjacencyList;
@@ -42,7 +43,7 @@ class Graph {
     return result;
   }
 
-  deapthFirstIterative(start) {
+  depthFirstIterative(start) {
     const stack = [start];
     const result = [];
     const visited = {};

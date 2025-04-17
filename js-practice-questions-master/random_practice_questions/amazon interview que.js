@@ -35,3 +35,20 @@ let sum = function(a){
     //4. if b is passed return sum else return a
   }
 }
+
+// remove consecutive duplicates 
+
+input  = ['Jaydeep', 'Jaydeep', 'Jaydeep' ,'Jaydeep', 'chouhan' ,'Jaydeep', 'chouhan']
+
+output = ['Jaydeep', 'chouhan' ,'Jaydeep', 'chouhan']
+
+
+let index = 0;
+for(let i=1; i<input.length; i++) {
+    if(input[index]==input[i]) continue;
+    else {
+        input[index+1] = input[i];
+        index++;
+    }
+}
+console.log(input.slice(0, index+1));

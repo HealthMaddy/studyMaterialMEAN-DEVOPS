@@ -17,6 +17,19 @@ steps to setup reverse proxy
 
 </VirtualHost>
 
+<VirtualHost *:80>
+
+    ServerName prod-user-api.healthmaddy.com
+
+    ProxyRequests Off
+
+
+    ProxyPass / http://16.16.186.220:3000/
+
+    ProxyPassReverse / http://16.16.186.220:3000/
+
+</VirtualHost>
+
 4. then fire these commands 
 sudo a2enmod proxy
 sudo a2enmod proxy_http

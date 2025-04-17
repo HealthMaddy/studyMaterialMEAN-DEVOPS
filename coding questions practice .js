@@ -1134,3 +1134,519 @@ console.log("Reversed List:");
 list.print(); // Output: 4 -> 3 -> 2 -> 1
 
 // paste back to geeks for geeks after interview
+
+/*
+Array Of Products
+Write a function that takes in a non-empty
+array of integers and returns an array of the
+same length, where each element in the
+output array is equal to the product of every
+other number in the input array.
+In other words, the value at output[i] is
+equal to the product of every number in the
+input array other than input[i] .
+Note that you're expected to solve this
+problem without using division.
+Sample Input
+array = [5, 1, 4, 2]
+Sample Output
+[8, 40, 10, 20]
+
+// 8 is equal to 1 x 4 x 2
+// 40 is equal to 5 x 4 x 2
+// 10 is equal to 5 x 1 x 2
+// 20 is equal to 5 x 1 x 4
+*/
+
+function productsArr(arr) {
+  const products = new Array(arr.length).fill(1);
+
+  let leftRunningProduct = 1;
+  let rightRunningProduct = 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    products[i] = leftRunningProduct;
+
+    leftRunningProduct *= arr[i];
+  }
+
+  for (let i = arr.length - 1; i > -1; i--) {
+    products[i] *= rightRunningProduct;
+    rightRunningProduct *= arr[i];
+  }
+
+  return products;
+}
+
+productsArr([5, 1, 4, 2]);
+
+/*
+Balanced Brackets
+Write a function that takes in a string made up of brackets ( ( , [ , { , ) , ] , and } ) and
+other optional characters. The function should return a boolean representing whether the string is
+balanced with regards to brackets.
+A string is said to be balanced if it has as many opening brackets of a certain type as it has closing
+brackets of that type and if no bracket is unmatched. Note that an opening bracket can't match a
+corresponding closing bracket that comes before it, and similarly, a closing bracket can't match a
+corresponding opening bracket that comes after it. Also, brackets can't overlap each other as in
+[(]) .
+Sample Input
+string = "([])(){}(())()()"(
+Sample Output
+true // it's balanced
+*/
+
+function balancedBrackets(str) {
+  const openingBrackets = "({[";
+  const closingBrackets = ")}]";
+  const map = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+
+  const stack = [];
+
+  for (let char of str) {
+    if (openingBrackets.includes(char)) {
+      stack.push(char);
+    } else if (closingBrackets.includes(char)) {
+      if (stack.length == 0) return false;
+
+      if (stack[stack.length - 1] == map[char]) {
+        stack.pop();
+      } else {
+        return false;
+      }
+    }
+  }
+  return stack.length == 0;
+}
+
+balancedBrackets("([])(){}(())()()");
+
+/*
+Binary Tree Diameter
+Write a function that takes in a Binary Tree
+and returns its diameter. The diameter of a
+binary tree is defined as the length of its
+longest path, even if that path doesn't pass
+through the root of the tree.
+A path is a collection of connected nodes in a
+tree, where no node is connected to more
+than two other nodes. The length of a path is
+the number of edges between the path's first
+node and its last node.
+Each BinaryTree node has an integer
+value , a left child node, and a right
+child node. Children nodes can either be
+BinaryTree nodes themselves or None /
+null .
+Sample Input
+tree = 1
+ / \
+ 3 2
+ / \
+ 7 4
+ / \
+ 8 5
+ / \
+ 9 6
+Sample Output
+6 // 9 -> 8 -> 7 -> 3 -> 4 -> 5 ->6
+// There are 6 edges between the
+// first node and the last node
+// of this tree's longest path.
+*/
+
+class BinaryTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class TreeInfo {
+  constructor(diameter, height) {
+    this.diameter = diameter;
+    this.height = height;
+  }
+}
+
+function bianaryTreeDiameter(tree) {
+  return getTreeInfo(tree);
+}
+
+function getTreeInfo(tree) {
+  if (tree == null) {
+    return new TreeInfo(0, 0);
+  }
+
+  const leftTreeInfo = getTreeInfo(tree.left);
+  const rightTreeInfo = getTreeInfo(tree.right);
+
+  const longestPathThroughRoot = leftTreeInfo.height + rightTreeInfo.height;
+  const maxDiameterSoFar = Math.max(leftTreeInfo.diameter, rightTreeInfo.diameter);
+
+  const currentDiameter = Math.max(longestPathThroughRoot, maxDiameterSoFar);
+  const currentHeight = 1 + Math.max(leftTreeInfo.height, rightTreeInfo.height);
+
+  return new TreeInfo(currentDiameter, currentHeight);
+}
+
+/*
+
+sudo code of above function
+// create binary tree
+// create tree info (diameter , height )
+
+// fucntion returns treeInfo
+
+// function treeInfo 
+
+
+
+if tree is null return new instance of treeInfo with 0,0 value 
+
+store left tree and right tree info 
+
+longest path through root   =  left tree height + right tree height
+maxDiameter so far  =  max of (left tree diameter , right tree diameter)
+
+current diameter  =   max of (longest path through root , maxDiameter)
+current heigth  = 1 +  max of (left tree height , right tree height)
+
+return new instance of tree info with current diameter and current height 
+
+
+*/
+
+function bstBfs() {
+  const queue = [],
+    data = [];
+  let node = this.root;
+
+  queue.push(this.root);
+
+  while (queue.length) {
+    node = queue.shift();
+    data.push(node);
+
+    if (node.left) queue.push(node.left);
+    if (node.rigth) queue.push(node.right);
+  }
+
+  return data;
+}
+
+function graphBFS(start) {
+  const queue = [start];
+  const result = [];
+  const visited = {};
+  let currentVertex;
+
+  visited[start] = true;
+
+  while (queue.length) {
+    currentVertex == queue.shift();
+
+    result.push(currentVertex);
+
+    this.adjacencyList[currentVertex].forEach((nbr) => {
+      if (!visited[nbr]) {
+        visited[nbr] = true;
+        queue.push(nbr);
+      }
+    });
+  }
+  return result;
+}
+
+/*
+Breadth-first Search
+You're given a Node class that has a name
+and an array of optional children nodes.
+When put together, nodes form an acyclic
+tree-like structure.
+Implement the breadthFirstSearch
+method on the Node class, which takes in an
+empty array, traverses the tree using the
+Breadth-first Search approach (specifically
+navigating the tree from left to right), stores
+all of the nodes' names in the input array, and
+returns it.
+If you're unfamiliar with Breadth-first Search,
+we recommend watching the Conceptual
+Overview section of this question's video
+explanation before starting to code.
+Sample Input
+graph = A
+ / | \
+ B C D
+ / \ / \
+ E F G H
+ / \ \
+ I J K
+Sample Output
+
+["A", "B", "C", "D", "E", "F", "G","H","I","J","K"]
+*/
+
+function graphBreadhtFirstSearch(array) {
+  const queue = [start];
+
+  while (queue.length) {
+    const current = queue.shift();
+    array.push(current.name);
+
+    for (const child of current.children) {
+      queue.push(child);
+    }
+  }
+  return array;
+}
+
+/*
+BST Construction
+Write a BST class for a Binary Search Tree.
+The class should support:
+Inserting values with the insert
+method.
+Removing values with the remove
+method; this method should only
+remove the first instance of a given
+value.
+Searching for values with the
+contains method.
+Note that you can't remove values from a
+single-node tree. In other words, calling the
+remove method on a single-node tree
+should simply not do anything.
+Each BST node has an integer value , a
+left child node, and a right child node.
+A node is said to be a valid BST node if and
+only if it satisfies the BST property: its
+value is strictly greater than the values of
+every node to its left; its value is less than
+or equal to the values of every node to its
+right; and its children nodes are either valid
+BST nodes themselves or None / null .
+
+// Assume the following BST has already been created
+ 10
+ / \
+ 5 15
+ / \ / \
+ 2 5 13 22
+ / \
+1 14
+// All operations below are performed sequentially
+insert(12): 10
+ / \
+ 5 15
+ / \ / \
+ 2 5 13 22
+ / / \
+ 1 12 14
+remove(10): 12
+ / \
+ 5 15
+ / \ / \
+ 2 5 13 22
+ / \
+ 1 14
+contains(15): true
+*/
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    const node = new Node(value);
+
+    if (!this.root) {
+      this.root = node;
+
+      return this;
+    }
+    let current = this.root;
+
+    while (true) {
+      if (current.value == value) return null;
+
+      if (current.value > value) {
+        if (!current.left) {
+          current.left = node;
+          return this;
+        } else {
+          current = current.left;
+        }
+      } else if (current.value < value) {
+        if (!current.right) {
+          current.right = node;
+        } else {
+          current = current.right;
+        }
+      } else {
+        return this;
+      }
+    }
+  }
+
+  contains(value) {
+    if (!this.root) return false;
+
+    let current = this.root;
+    let found = false;
+
+    while (current && !found) {
+      if (current.value > value) {
+        current = current.left;
+      } else if (current.value < value) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+
+    return found;
+  }
+
+  getMinValue() {
+    let current = this.root;
+
+    while (current.left) {
+      current = current.left;
+    }
+
+    return current;
+  }
+
+  remove(value) {
+    // pending...
+  }
+}
+
+function traverseBstInOrder(tree, arr) {
+  if (tree != null) {
+    traverseBstInOrder(tree.left, arr);
+    arr.push(tree.value);
+    traverseBstInOrder(tree.right, arr);
+  }
+  return arr;
+}
+
+function traverseBstPreOrder(tree, arr) {
+  if (tree != null) {
+    arr.push(tree.value);
+    traverseBstPreOrder(tree.left, arr);
+    traverseBstPreOrder(tree.right, arr);
+  }
+  return arr;
+}
+
+function traverseBstPostOrder(tree, arr) {
+  if (tree != null) {
+    traverseBstPostOrder(tree.left, arr);
+    traverseBstPostOrder(tree.right, arr);
+    arr.push(tree.value);
+  }
+  return arr;
+}
+
+/*
+Cycle In Graph
+You're given a list of edges representing
+an unweighted, directed graph with at least
+one node. Write a function that returns a
+boolean representing whether the given
+graph contains a cycle.
+For the purpose of this question, a cycle is
+defined as any number of vertices, including
+just one vertex, that are connected in a
+closed chain. A cycle can also be defined as a
+chain of at least one vertex in which the first
+vertex is the same as the last.
+The given list is what's called an adjacency
+list, and it represents a graph. The number of
+vertices in the graph is equal to the length of
+edges , where each index i in edges
+contains vertex i 's outbound edges, in no
+particular order. Each individual edge is
+represented by a positive integer that
+denotes an index (a destination vertex) in the
+list that this vertex is connected to. Note that
+these edges are directed, meaning that you
+can only travel from a particular vertex to its
+destination, not the other way around
+(unless the destination vertex itself has an
+outbound edge to the original vertex).
+Also note that this graph may contain selfloops. A self-loop is an edge that has the
+same destination and origin; in other words,
+it's an edge that connects a vertex to itself.
+For the purpose of this question, a self-loop
+is considered a cycle.
+For a more detailed explanation, please refer
+to the Conceptual Overview section of this
+question's video explanation
+Sample Input
+edges = [
+ [1, 3],
+ [2, 3, 4],
+ [0],
+ [],
+ [2, 5],
+ [],
+]
+Sample Output
+true
+// There are multiple cycles in this graph:
+// 1) 0 -> 1 -> 2 -> 0
+// 2) 0 -> 1 -> 4 -> 2 -> 0
+// 3) 1 -> 2 -> 0 -> 1
+// These are just 3 examples; there are more.
+*/
+
+const [white, grey, black] = [0, 1, 2];
+
+function cycleInGraph(edges) {
+  const numberOfNodes = edges.length;
+  const colors = new Array(numberOfNodes).fill(white);
+
+  for (let node = 0; node < numberOfNodes; node++) {
+    if (colors[white] != node) continue;
+
+    const containCycle = traverseAndColorNodes(node, edges, colors);
+    if (containCycle) return true;
+  }
+}
+
+function traverseAndColorNodes(node, edges, color) {
+  color[node] = grey;
+
+  const neighbours = edges[node];
+
+  for (const neighbour of neighbours) {
+    const neighbourColor = color[neighbour];
+
+    if (neighbourColor == grey) return true;
+    if (neighbourColor == black) continue;
+
+    const containCycle = traverseAndColorNodes(neighbour, edges, color);
+    if (containCycle) return true;
+  }
+
+  color[node] = black;
+  return false;
+}

@@ -31,3 +31,32 @@ let debounce2 = function (fn, delayTime) {
     }, delayTime);
   };
 };
+
+
+// debounce with params 
+/*
+
+
+function simpleLogger(...param){
+  console.log('executing logger....', param)
+}
+
+
+let debounce = function(fn, ...params){
+let timer, context = this ,  args = arguments
+
+
+return function(delay){
+   clearTimeout(timer)
+   
+   timer = setTimeout(()=>{
+       fn.apply(context , params)
+   }, delay)
+}
+}
+
+let debounceAfter2secs = debounce(simpleLogger ,  'sample param' , 123, true)
+
+console.log(debounceAfter2secs(2000))
+
+*/

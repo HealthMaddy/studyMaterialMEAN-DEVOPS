@@ -107,7 +107,7 @@ function cycleInGraph(edges) {
   }
 
   return false;
-}
+  }
 
 function traverseAndColorNodes(node, edges, colors) {
   colors[node] = GREY;

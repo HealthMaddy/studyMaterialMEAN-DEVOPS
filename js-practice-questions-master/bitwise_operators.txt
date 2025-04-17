@@ -1,0 +1,8 @@
+| Name               | Symbol | Usage  | What it does |
+|--------------------|--------|--------|--------------|
+| Bitwise And       | &      | a & b  | Returns 1 only if both the bits are 1 |
+| Bitwise Or        | |      | a | b  | Returns 1 if one of the bits is 1 |
+| Bitwise Not       | ~      | ~a     | Returns the complement of a bit |
+| Bitwise Xor       | ^      | a ^ b  | Returns 0 if both the bits are same else 1 |
+| Bitwise Left shift | <<    | a << n | Shifts a towards left by n digits |
+| Bitwise Right shift | >>   | a >> n | Shifts a towards right by n digits |
